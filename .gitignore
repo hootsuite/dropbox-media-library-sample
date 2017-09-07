@@ -1,0 +1,6 @@
+certs/
+.vscode/
+node_modules/
+.DS_Store
+package-lock.json
+dropboxauth.txt
