@@ -113,6 +113,12 @@ change this variable as they run, but you don't need to do anything yourself.)
 8. At this point, the tests are fully configured. Click `Save & Run` near the top of the page in order to run the tests
 against your app!
 
+## Webhooks
+
+You can configure your app to receive webhooks so you can be notified about events, such as when a Hootsuite user [installs or uninstalls your app](https://developer.hootsuite.com/docs/webhooks#section-apps).
+
+Go to [My Apps](https://hootsuite.com/developers/my-apps) to configure your webhooks URL.  For example, using this sample app deployed to Heroku, your webhooks URL would be https://<heroku-app-name-here>.herokuapp.com/webhooks.
+
 ## Useful Links
 
 * [Hootsuite Developer Docs](https://developer.hootsuite.com/docs)

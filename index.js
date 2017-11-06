@@ -2,8 +2,12 @@ const express = require('express');
 const https = require('https');
 const http = require('http');
 const fs = require('fs');
+const bodyParser = require('body-parser');
 const app = express();
 const request = require('request');
+
+// create application/json parser
+const jsonParser = bodyParser.json();
 
 const dropboxApiUrl = 'https://api.dropboxapi.com/2';
 const dropboxContentUrl = 'https://content.dropboxapi.com/2';
@@ -251,8 +255,14 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static('static'));
+app.use(jsonParser);
 
 app.get('/v1/status', (req, res) => {
+  res.status(200).end();
+});
+
+app.post('/webhooks', (req, res) => {
+  console.log("Webhook content:\n\n%s", JSON.stringify(req.body));
   res.status(200).end();
 });
 
