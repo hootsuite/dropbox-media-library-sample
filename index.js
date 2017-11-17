@@ -207,7 +207,12 @@ var getItemsWithFilter = (folderName = '', authHeader = '', query = '', mediaTyp
       // filter for query
       .filter(item => {
         return item.name.toLowerCase().includes(query.toLowerCase());
+      })
+      // check if it has media_info
+      .filter(item => {
+        return item.media_info;
       });
+
       var promises = [];
       compatibleFiles.forEach(file => {
         promises.push(getDropboxDirectUrl(file.id, authHeader));
@@ -228,11 +233,18 @@ var getItemsWithFilter = (folderName = '', authHeader = '', query = '', mediaTyp
             return file.id === item.id;
           });
           const fileData = Object.assign({}, ...filteredData);
-          var media = new Media(file.media_info.metadata.dimensions.height, file.media_info.metadata.dimensions.width, fileData.sharedLink, file.name);
+
+          var media = new Media(
+            (file.media_info) ? file.media_info.metadata.dimensions.height : 0,
+            (file.media_info) ? file.media_info.metadata.dimensions.width : 0,
+            fileData.sharedLink,
+            file.name
+          );
           media.id = file.id;
           media.original.sizeInBytes = file.size;
           media.thumbnail.url = 'data:image/jpeg;base64, ' + fileData.thumbnail;
           return media;
+
         }));
         // body.cursor is the next cursor, cursor is the current cursor
         var metadata = new Metadata(body.cursor, cursor);

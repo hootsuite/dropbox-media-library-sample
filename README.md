@@ -57,7 +57,8 @@ The Sample App can be hosted locally, or on Heroku or some other hosting service
 ### Providing Media for the Sample App to use
 
 1. Open your Dropbox that you used to login in the Media Library.
-2. There should be a folder called Apps and inside that a folder with the name of the Dropbox App you created. Place all of your media that you want the app to display in that folder. Videos and GIFs are currently not supported.
+2. There should be a folder called Apps and inside that a folder with the name of the Dropbox App you created. Place all of your media that you want the app to display in that folder. For pictures, JPG format should be used. Videos and GIFs are currently not supported.
+3. You will have to wait for Dropbox to add media_info to the file before it appears in the Hoostsuite content library, this can take some time.
 
 ### Configuring your OAuth 2 Dev Access Token
 
