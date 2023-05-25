@@ -207,10 +207,6 @@ var getItemsWithFilter = (folderName = '', authHeader = '', query = '', mediaTyp
       // filter for query
       .filter(item => {
         return item.name.toLowerCase().includes(query.toLowerCase());
-      })
-      // check if it has media_info
-      .filter(item => {
-        return item.media_info;
       });
 
       var promises = [];
