@@ -48,7 +48,7 @@ The Sample App can be hosted locally, or on Heroku or some other hosting service
   * App key -> Client ID
   * App secret -> Client secret
   * `https://api.dropboxapi.com/oauth2/token` -> Token URL
-  * `https://www.dropbox.com/oauth2/authorize` -> Authorization URL	
+  * `https://www.dropbox.com/oauth2/authorize?token_access_type=offline` -> Authorization URL	
 5. Hit Save and copy the redirect URI in Hootsuite to Dropbox's redirect URI section.
 6. Install your app by going to your [Hootsuite dashboard](https://hootsuite.com/dashboard) and opening up the Composer (Beta) at the top right. Open the Media Library by pressing the button near the upload area and install your app in the dropdown where `Free Images` is the current selection.
 7. Log into your Dropbox account in the popup (You may need to enable popups on that page).
